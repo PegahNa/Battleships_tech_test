@@ -1,5 +1,4 @@
 ```mermaid
-
 flowchart LR;
 
 Start --> EnterCommands{Enter commands};
