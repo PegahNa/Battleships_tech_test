@@ -1,3 +1,5 @@
+```mermaid
+
 flowchart LR;
 
 Start --> EnterCommands{Enter commands};
@@ -16,3 +18,5 @@ ValidateShot -->|Miss| DisplayMissMessage;
 ValidateShot -->|Hit| DisplayHitMessage;
 ValidateShot -->|Sunk| DisplaySunkMessage;
 ValidateShot -->|Invalid| DisplayInvalidShotMessage;
+
+```
