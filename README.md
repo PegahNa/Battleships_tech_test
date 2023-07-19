@@ -11,6 +11,9 @@ PlaceShip -->|Valid Placement| ValidatePlacement
 ValidatePlacement -->|Invalid| DisplayInvalidPlacementMessage
 ValidatePlacement -->|Valid| AddShip(Add Ship)
 
+AddShip --> UpdateBoard(Update Board)
+UpdateBoard -->|All Ships Placed?| AllShipsPlaced(All Ships Placed)
+
 FireShot -->|Valid Shot| ValidateShot
 ValidateShot -->|Miss| DisplayMissMessage
 ValidateShot -->|Hit| DisplayHitMessage
