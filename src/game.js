@@ -8,7 +8,15 @@ class Game {
     this.gameOver = false; // Flag to track if the game is over
   }
 
-  // Game loop and logic
+  // Method to add a player to the game
+  addPlayer(player) {
+    if (this.players.length < 2) {
+      this.players.push(player);
+      console.log("${player.name} has joined the game! ");
+    } else {
+      console.log("maximum number of players reached!");
+    }
+  }
 }
 
 // Main entry point
