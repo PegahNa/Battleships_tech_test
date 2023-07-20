@@ -14,6 +14,25 @@ class Board {
       .map(() => new Array(this.size).fill(null));
     return grid;
   }
+
+  // Method to place a ship on the board
+  placeShip(ship, position, direction) {
+    // Implement the logic to place the ship on the board
+    // based on the given position and direction.
+    // For simplicity, let's assume a basic implementation:
+    const { x, y } = position;
+    const shipLength = ship.size;
+
+    if (direction === "horizontal") {
+      for (let i = x; i < x + shipLength; i++) {
+        this.grid[y][i] = ship;
+      }
+    } else if (direction === "vertical") {
+      for (let i = y; i < y + shipLength; i++) {
+        this.grid[i][x] = ship;
+      }
+    }
+  }
 }
 
 module.exports = Board;
