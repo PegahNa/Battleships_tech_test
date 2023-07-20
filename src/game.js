@@ -59,7 +59,6 @@ class Game {
     // update the opponent's board with the shot result (hit, miss, or sunk),
     // and return the result of the shot to display to the player.
     // You'll need to interact with the Board and Ship classes to handle this.
-
     // For demonstration purposes, let's assume a simple implementation:
     const opponentPlayer =
       this.players[(this.currentPlayerIndex + 1) % this.players.length];
@@ -88,10 +87,8 @@ class Game {
       return;
     }
   }
-
-  // Other methods of the Game class will be implemented here
+  // Other methods of the Game class will be implemented here. methods to handle player setups, ship placements, display game statistics, show game messages, save and load game progress, and more.
 }
-
 // Main entry point
 const game = new Game();
 game.start();

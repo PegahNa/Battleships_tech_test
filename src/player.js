@@ -2,7 +2,9 @@
 // with the Board class for ship placements and firing shots.
 class Player {
   constructor(name) {
-    // Player properties and initialization
+    this.name = name;
+    this.board = new board();
+    this.ships = [];
   }
 
   // Methods related to player actions, turns, and score tracking
