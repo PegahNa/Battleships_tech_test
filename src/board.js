@@ -33,6 +33,30 @@ class Board {
       }
     }
   }
+
+  // Method to fire a shot at the specified target
+  fireShot(target) {
+    const { x, y } = target;
+    const cell = this.grid[y][x];
+
+    if (cell === null) {
+      // Miss
+      this.grid[y][x] = "M"; // Mark as a miss on the board
+      return "Miss";
+    } else if (cell === "M" || cell === "H") {
+      // Cell already fired at (either hit or miss)
+      return "Already fired at this location.";
+    } else {
+      // Hit
+      cell.hit(); // Assuming the Ship class has a `hit()` method to handle hits
+      this.grid[y][x] = "H"; // Mark as a hit on the board
+      if (cell.isSunk()) {
+        return "Hit! Ship is sunk!";
+      } else {
+        return "Hit!";
+      }
+    }
+  }
 }
 
 module.exports = Board;
