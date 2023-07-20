@@ -1,6 +1,5 @@
 // This React component represents a player's board UI.
 import React from "react";
-import Cell from "./Cell";
 
 const PlayerBoard = ({ board }) => {
   return (
