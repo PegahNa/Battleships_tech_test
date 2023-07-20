@@ -57,6 +57,36 @@ class Board {
       }
     }
   }
+
+  // Method to check if a ship placement is valid
+  isValidPlacement(ship, position, direction) {
+    // Implement the logic to check if the ship placement is valid.
+    // For example, check if the ship fits within the board boundaries,
+    // does not overlap with other ships, and is placed within empty cells.
+    // You'll need to interact with the Ship class to get its size and check for overlaps.
+
+    // For simplicity, we'll assume a valid placement if the ship fits within the board.
+    const { x, y } = position;
+    const shipLength = ship.size;
+
+    if (direction === "horizontal" && x + shipLength <= this.size) {
+      for (let i = x; i < x + shipLength; i++) {
+        if (this.grid[y][i] !== null) {
+          return false; // Overlapping with another ship
+        }
+      }
+      return true;
+    } else if (direction === "vertical" && y + shipLength <= this.size) {
+      for (let i = y; i < y + shipLength; i++) {
+        if (this.grid[i][x] !== null) {
+          return false; // Overlapping with another ship
+        }
+      }
+      return true;
+    }
+
+    return false;
+  }
 }
 
 module.exports = Board;
