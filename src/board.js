@@ -7,7 +7,13 @@ class Board {
     this.grid = this.createEmptyGrid(); // Initialize an empty grid
   }
 
-  // Methods for placing ships, firing shots, and game state management
+  // Method to create an empty grid
+  createEmptyGrid() {
+    const grid = new Array(this.size)
+      .fill(null)
+      .map(() => new Array(this.size).fill(null));
+    return grid;
+  }
 }
 
 module.exports = Board;
