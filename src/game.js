@@ -36,7 +36,13 @@ class Game {
     while (!this.gameOver) {
       const currentPlayer = this.players[this.currentPlayerIndex];
       console.log(`${currentPlayer.name}'s turn: `);
-      // Implement logic for the player's turn here
+
+      // Player's turn: Fire a shot
+      const target = currentPlayer.getShotTarget(); // Implement this method in the Player class
+      const result = this.fireShot(target);
+
+      // Display the result of the shot
+      console.log(result);
 
       // After a turn, check for game over condition
       this.checkGameOver();
@@ -47,11 +53,40 @@ class Game {
     }
   }
 
+  fireShot(target) {
+    // Implement the logic to fire a shot at the specified target
+    // For example, you can check if the target is a valid location on the opponent's board,
+    // update the opponent's board with the shot result (hit, miss, or sunk),
+    // and return the result of the shot to display to the player.
+    // You'll need to interact with the Board and Ship classes to handle this.
+
+    // For demonstration purposes, let's assume a simple implementation:
+    const opponentPlayer =
+      this.players[(this.currentPlayerIndex + 1) % this.players.length];
+    const shotResult = opponentPlayer.board.fireShot(target);
+    return shotResult;
+  }
+
   // Method to check for game over condition
   checkGameOver() {
-    // Implement logic to check if the game is over
-    // For example, check if all ships of any player are sunk
-    // If the game is over, set this.gameOver to true
+    // Check if any player has all their ships sunk
+    for (const player of this.players) {
+      if (player.board.areAllShipSunk()) {
+        console.log(`${player.name} has lost all their ships! Game Over.`);
+        this.gameOver = true;
+        return;
+      }
+    }
+
+    // Check if only one player has ships remaining
+    const activePlayers = this.players.filter(
+      (player) => !player.board.areAllShipsSunk()
+    );
+    if (activePlayers.length === 1) {
+      console.log(`${activePlayers[0].name} is the winner! Game Over.`);
+      this.gameOver = true;
+      return;
+    }
   }
 
   // Other methods of the Game class will be implemented here
