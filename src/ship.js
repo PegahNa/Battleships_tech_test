@@ -7,7 +7,12 @@ class Ship {
     this.hits = new Array(size).fill(false);
   }
 
-  // Methods related to ship status and behavior
+  // Method to mark the ship as hit at the specified index
+  hit(index) {
+    if (index >= 0 && index < this.size) {
+      this.hits[index] = true;
+    }
+  }
 }
 
 module.exports = Ship;
