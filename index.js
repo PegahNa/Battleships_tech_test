@@ -1,13 +1,6 @@
-import Game from "./src/game";
-import Board from "./src/board";
-import Ship from "./src/ship";
-import Player from "./src/player";
+import React from "react";
+import ReactDOM from "react-dom";
+import GameBoard from "./ui/components/GameBoard"; // Import the main component
 
-// Create instances of the necessary classes
-const board = new Board();
-const player1 = new Player("Player 1");
-const player2 = new Player("Player 2");
-const game = new Game(board, player1, player2);
-
-// Start the game
-game.start();
+// Render the GameBoard component to the 'root' element in the HTML page
+ReactDOM.render(<GameBoard />, document.getElementById("root"));
