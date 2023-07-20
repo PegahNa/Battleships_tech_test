@@ -3,7 +3,8 @@
 // and Ship classes.
 class Board {
   constructor() {
-    // Board initialization
+    this.size = 10; // Assuming a square board with a size of 10x10
+    this.grid = this.createEmptyGrid(); // Initialize an empty grid
   }
 
   // Methods for placing ships, firing shots, and game state management
