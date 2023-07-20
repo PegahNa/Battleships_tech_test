@@ -1,0 +1,108 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* Game board styles */
+.game-board {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.boards {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.board {
+  border: 2px solid #333;
+  width: 400px;
+  height: 400px;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 2px;
+}
+
+.board-row {
+  display: flex;
+}
+
+.cell {
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  color: transparent;
+  transition: background-color 0.2s;
+}
+
+.cell:hover {
+  background-color: #ddd;
+}
+
+.cell.S {
+  background-color: #333;
+}
+
+.cell.H {
+  background-color: #ff4500;
+  color: #fff;
+}
+
+.cell.M {
+  background-color: #4682b4;
+  color: #fff;
+}
+
+/* Ship placement form styles */
+.ship-placement-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 10px;
+  border: 2px solid #333;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.ship-placement-form h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.ship-placement-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.ship-placement-form select,
+.ship-placement-form input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.ship-placement-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ship-placement-form button:hover {
+  background-color: #555;
+}
