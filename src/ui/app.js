@@ -1,4 +1,6 @@
-import Game from "../src/game";
-import Board from "../src/board";
-import Ship from "../src/ship";
-import Player from "../src/player";
+import React from "react";
+import ReactDOM from "react-dom";
+import GameBoard from "./ui/components/GameBoard";
+// Import other components as needed
+
+ReactDOM.render(<GameBoard />, document.getElementById("root"));
