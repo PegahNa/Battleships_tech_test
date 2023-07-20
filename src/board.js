@@ -87,6 +87,17 @@ class Board {
 
     return false;
   }
+
+  // Method to check if all ships on the board are sunk
+  areAllShipsSunk() {
+    // Check if all ships on the board are sunk.
+    // You'll need to interact with the Ship class to check their status.
+
+    // For simplicity, let's assume all ships are sunk if there are no ships on the board.
+    return this.grid
+      .flat()
+      .every((cell) => cell === null || cell === "M" || cell === "H");
+  }
 }
 
 module.exports = Board;
