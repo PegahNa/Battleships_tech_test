@@ -13,6 +13,11 @@ class Ship {
       this.hits[index] = true;
     }
   }
+
+  // Method to check if the ship is sunk
+  isSunk() {
+    return this.hits.every((hit) => hit === true);
+  }
 }
 
 module.exports = Ship;
