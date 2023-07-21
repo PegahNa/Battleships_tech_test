@@ -1,5 +1,6 @@
+/* eslint-env jest */
 // Import the Player class from the appropriate location
-import Player from "../../src/player";
+const Player = require("../../src/player");
 
 describe("Player Class Unit Tests", () => {
   // Test for player initialization

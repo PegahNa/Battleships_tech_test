@@ -1,5 +1,7 @@
+/* eslint-env jest */
+
 // Import the Board class from the appropriate location
-import Board from "../../src/board";
+const Board = require("../../src/board");
 
 describe("Board Class Unit Tests", () => {
   // Test for board initialization

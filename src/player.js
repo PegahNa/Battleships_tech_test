@@ -1,9 +1,11 @@
 // The Player class represents a player in the game and interacts
 // with the Board class for ship placements and firing shots.
+import Board from "./board";
+
 class Player {
   constructor(name) {
     this.name = name;
-    this.board = new board();
+    this.board = new Board();
     this.ships = [];
   }
 

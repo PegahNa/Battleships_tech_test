@@ -1,5 +1,9 @@
 // The Game class initializes the game and coordinates
 // the actions between players, the board, and ships.
+import Board from "./board";
+import Player from "./player";
+import Ship from "./ship";
+
 class Game {
   constructor() {
     // Initialize the game state
@@ -12,13 +16,14 @@ class Game {
   addPlayer(player) {
     if (this.players.length < 2) {
       this.players.push(player);
-      console.log(`${player.name} has joined the game! `);
+      console.log(`${player.name} has joined the game!`);
     } else {
       console.log("maximum number of players reached!");
     }
   }
 
   start() {
+    // Check if there are at least 2 players
     if (this.players.length < 2) {
       console.log("Cannot start the game. Need at least 2 players.");
       return;
@@ -70,7 +75,7 @@ class Game {
   checkGameOver() {
     // Check if any player has all their ships sunk
     for (const player of this.players) {
-      if (player.board.areAllShipSunk()) {
+      if (player.board.areAllShipsSunk()) {
         console.log(`${player.name} has lost all their ships! Game Over.`);
         this.gameOver = true;
         return;
@@ -89,6 +94,5 @@ class Game {
   }
   // Other methods of the Game class will be implemented here. methods to handle player setups, ship placements, display game statistics, show game messages, save and load game progress, and more.
 }
-// Main entry point
-const game = new Game();
-game.start();
+
+module.exports = Game;
