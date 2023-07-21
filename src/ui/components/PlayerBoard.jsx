@@ -1,5 +1,6 @@
 // This React component represents a player's board UI.
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const PlayerBoard = ({ board }) => {
   return (

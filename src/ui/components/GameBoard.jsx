@@ -3,8 +3,10 @@ import PlayerBoard from "./PlayerBoard";
 import ShipPlacementForm from "./ShipPlacementForm";
 
 const GameBoard = () => {
-  // Assuming you have a 'playerBoard' state that stores the player's board
-  const [playerBoard, setPlayerBoard] = useState([]);
+  // Add these declarations to fix the linting errors
+  const [playerBoard, setPlayerBoard] = useState([]); // Replace `[]` with your initial player board data
+  const [message, setMessage] = useState(""); // Replace empty string with your initial message data
+  const [gameOver, setGameOver] = useState(false); // Replace `false` with your initial game over state
 
   // Function to handle ship placement (to be implemented)
   const handleShipPlacement = (ship, position, direction) => {
@@ -16,16 +18,9 @@ const GameBoard = () => {
     // Implement the logic to handle firing shots at the opponent's board
   };
 
-  // Assuming you have a 'message' state that stores the game message
-  const [message, setMessage] = useState("");
-
-  // Assuming you have a 'gameOver' state that indicates if the game is over
-  const [gameOver, setGameOver] = useState(false);
-
   useEffect(() => {
     // Implement the game logic here
     // (e.g., initializing the player and opponent boards, checking game status)
-    // You can update the state variables like 'playerBoard', 'message', and 'gameOver' accordingly.
   }, []);
 
   return (
