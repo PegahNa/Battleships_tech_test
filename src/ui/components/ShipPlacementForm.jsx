@@ -1,5 +1,6 @@
 // This React component represents a form for placing ships.
 import React, { useState } from "react";
+import PropTypes from "prop-types"; // Import prop-types
 
 const ShipPlacementForm = ({ onPlaceShip }) => {
   const [ship, setShip] = useState("Carrier"); // Default ship type is Carrier
@@ -68,6 +69,11 @@ const ShipPlacementForm = ({ onPlaceShip }) => {
       </form>
     </div>
   );
+};
+
+// Prop validation for the 'onPlaceShip' prop
+ShipPlacementForm.propTypes = {
+  onPlaceShip: PropTypes.func.isRequired,
 };
 
 export default ShipPlacementForm;

@@ -15,12 +15,10 @@ describe("Game Class Unit Tests", () => {
   // Test for game initialization
   test("Should initialize the game with the correct board and players", () => {
     // Create instances of the mocked Board, Player, and Ship classes
-    const boardInstance = new Board();
-    const player1Instance = new Player("Player 1"); // Provide a name for Player 1
-    const player2Instance = new Player("Player 2"); // Provide a name for Player 2
-
-    // Create an instance of the Game class
     const gameInstance = new Game();
+    const boardInstance = new Board();
+    const player1Instance = new Player("Player 1"); // Create an instance of the Player class with name "Player 1"
+    const player2Instance = new Player("Player 2"); // Create an instance of the Player class with name "Player 2"
 
     // Add players to the game
     gameInstance.addPlayer(player1Instance);
@@ -28,7 +26,8 @@ describe("Game Class Unit Tests", () => {
 
     // Assertions to check if the game is correctly initialized
     expect(gameInstance.board).toBe(boardInstance);
-    expect(gameInstance.players).toEqual([player1Instance, player2Instance]);
+    expect(gameInstance.players[0]).toBe(player1Instance);
+    expect(gameInstance.players[1]).toBe(player2Instance);
     expect(gameInstance.currentPlayerIndex).toBe(0);
   });
 

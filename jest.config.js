@@ -1,4 +1,4 @@
-// jest.config.js
 module.exports = {
-  // Jest configuration options here
+  testEnvironment: "jsdom",
+  // Add other Jest configuration options as needed
 };

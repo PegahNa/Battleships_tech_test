@@ -7,7 +7,9 @@ const PlayerBoard = ({ board }) => {
       {board.map((row, rowIndex) => (
         <div key={rowIndex} className="board-row">
           {row.map((cell, colIndex) => (
-            <Cell key={colIndex} value={cell} />
+            <div key={colIndex} className="cell">
+              {cell}
+            </div>
           ))}
         </div>
       ))}
